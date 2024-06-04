@@ -19,7 +19,7 @@
                 <div class="col-md-12">
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Registro de Cursos</h3>
+                            <h3 class="card-title">Registro de Horarios</h3>
                         </div>
                         <form id="frmIncapacidades">
                             <div class="card-body">
@@ -31,40 +31,34 @@
                                         <div class="row">
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label for="txtCodigo">Codigo Curso</label>
-                                                    <input type="text" class="form-control" id="txtCodigo" placeholder="Codigo del curso">
+                                                    <label for="txtCodigo">Codigo</label>
+                                                    <input type="text" class="form-control" id="txtCodigo" placeholder="Codigo del horario">
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label for="txtNombre">Nombre Curso</label>
-                                                    <input type="text" class="form-control" id="txtNombre" placeholder="Nombre del curso">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="txtDescripcion">Descripcion</label>
-                                                    <input type="text" class="form-control" id="txtDescripcion" placeholder="Descripcion del curso">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="txtDuracion">Duracion</label>
-                                                    <input type="text" class="form-control" id="txtDuracion" placeholder="Duracion del curso">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="txtNivel">Nivel</label>
-                                                    <input type="text" class="form-control" id="txtNivel" placeholder="Nivel del curso">
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="cboDocumentoEstudiante">Documento Estudiante</label>
-                                                    <select id="cboDocumentoEstudiante" class="form-control">
+                                                    <label for="cboCodigoSesion">CodigoSesion</label>
+                                                    <select id="cboCodigoSesion" class="form-control">
                                                         <option value="0">SELECCIONAR</option>
                                                     </select>
+                                                </div>
+                                            </div>                                            
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="txtDiaSemana">Dia de la Semana</label>
+                                                    <input type="date" class="form-control" id="txtDiaSemana" placeholder="Dia de la semana">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="txtHoraInicio">Hora Inicio</label>
+                                                    <input type="time" class="form-control" id="txtHoraInicio" placeholder="Hora de inicio">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="txtHoraFin">Hora Fin</label>
+                                                    <input type="time" class="form-control" id="txtHoraFin" placeholder="Hora de fin">
                                                 </div>
                                             </div>
                                         </div>                                        
@@ -100,17 +94,10 @@
                                                     <thead>
                                                         <tr>
                                                             <th>Codigo</th>
-                                                            <th>Nombre</th>
-                                                            <th>Descipcion</th>
-                                                            <th>Duracion</th>
-                                                            <th>Nivel</th>
-                                                            <th>CodigoAsignatura</th>
-                                                            <th>CodigoHorario</th>
-                                                            <th>DocumentoProfesor</th>
-                                                            <th>DocumentoEstudiante</th>
-                                                            <th>CodigoAsistencia</th>
-                                                            <th>CodigoEvaluacion</th>
-                                                            <th>CodigoCalificacion</th>
+                                                            <th>CodigoSesion</th>
+                                                            <th>DiaSemana</th>
+                                                            <th>HoraInicio</th>
+                                                            <th>HoraFin</th>                                                           
                                                         </tr>
                                                     </thead>
                                                 </table>
@@ -130,6 +117,6 @@
     </section>
     <script src="../Scripts/jquery-3.4.1.min.js"></script>
     <script src="../Scripts/bootstrap.bundle.min.js"></script>
-    <script src="Scripts/Curso.js"></script>
+    <script src="Scripts/Horario.js"></script>
 </body>
 </html>

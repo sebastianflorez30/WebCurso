@@ -21,7 +21,7 @@ async function Consultar() {
     //por querystring
     //Solo se invoca el fetch
     try {
-        const Respuesta = await fetch("http://localhost:62586/api/Estudiantes?Id_Estudiante=" + Documento,
+        const Respuesta = await fetch("http://localhost:62586/api/Estudiantes?Documento=" + Documento,
             {
                 method: "GET",
                 mode: "cors",

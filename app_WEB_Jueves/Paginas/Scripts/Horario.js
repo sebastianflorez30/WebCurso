@@ -21,7 +21,7 @@ async function Consultar() {
     //por querystring
     //Solo se invoca el fetch
     try {
-        const Respuesta = await fetch("http://localhost:62586/api/Cursos?Codigo=" + Codigo,
+        const Respuesta = await fetch("http://localhost:62586/api/Horarios?Codigo=" + Codigo,
             {
                 method: "GET",
                 mode: "cors",
@@ -31,10 +31,10 @@ async function Consultar() {
         const Resultado = await Respuesta.json();
         //Presentar a respuesta en el html
         //El resultado está en formato JSON, y se puede acceder a las propiedades del json, a través del .
-        $("#txtNombre").val(Resultado.Nombre);
-        $("#txtDescripcion").val(Resultado.Descripcion);
-        $("#txtDuracion").val(Resultado.Duracion);
-        $("#txtNivel").val(Resultado.Nivel);              
+        $("#txtCodigoSesion").val(Resultado.CodigoSesion);
+        $("#txtDiaSemana").val(Resultado.DiaSemana);
+        $("#txtHoraInicio").val(Resultado.HoraInicio);
+        $("#txtHoraFin").val(Resultado.HoraFin);            ;             
     }
     catch (_error) {
         //Presentar a respuesta del error en el html
@@ -46,27 +46,26 @@ async function EjecutarComando(Comando) {
     //Definición de variables en javascript: let, var. let define variables locales para la función,
     //var define variables globales para la página
     var Codigo = $("#txtCodigo").val();
-    let Nombre = $("#txtNombre").val();
-    let Descripcion = $("#txtDescripcion").val();
-    let Duracion = $("#txtDuracion").val();
-    let Nivel = $("#txtNivel").val();
-    
+    let CodigoSesion = $("#txtCodigoSesion").val();
+    let DiaSemana = $("#txtDiaSemana").val();
+    let HoraInicio = $("#txtHoraInicio").val();
+    let HoraFin = $("#txtHoraFin").val();      
 
     //Construir el json que se va a enviar al servicio
-    let DatosCurso = {
+    let DatosHorario = {
         Codigo: Codigo,
-        Nombre: Nombre,
-        Descripcion: Descripcion,
-        Duracion: Duracion,
-        Nivel: Nivel        
+        CodigoSesion: CodigoSesion,
+        DiaSemana: DiaSemana,
+        HoraInicio: HoraInicio,
+        HoraFin: HoraFin
     }
     try {
-        const Respuesta = await fetch("http://localhost:62586/api/Cursos",
+        const Respuesta = await fetch("http://localhost:62586/api/Horarios",
             {
                 method: Comando,
                 mode: "cors",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(DatosCurso)
+                body: JSON.stringify(DatosHorario)
             });
         //Leer la respuesta del servicio
         const Resultado = await Respuesta.json();
