@@ -51,8 +51,7 @@ async function EjecutarComando(Comando) {
     let PrimerApellido = $("#txtPrimerApellido").val();
     let SegundoApellido = $("#txtSegundoApellido").val();
     let Correo = $("#txtCorreo").val();
-    let Telefono = $("#txtTelefono").val();
-    let rol = $("#txtRol").val();
+    let Telefono = $("#txtTelefono").val();    
 
     //Construir el json que se va a enviar al servicio
     let DatosEstudiante = {

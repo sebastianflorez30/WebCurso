@@ -16,12 +16,12 @@
 });
 
 async function Consultar() {
-    let Documento = $("#txtCodigoCurso").val();
+    let Documento = $("#txtCodigo").val();
     //Para el consultar, normalmente no se envía en el body una estructura, sino que se pasan los datos
     //por querystring
     //Solo se invoca el fetch
     try {
-        const Respuesta = await fetch("http://localhost:62586/api/Estudiantes?Id_Estudiante=" + Documento,
+        const Respuesta = await fetch("http://localhost:62586/api/Cursos?Codigo=" + Documento,
             {
                 method: "GET",
                 mode: "cors",
@@ -31,7 +31,7 @@ async function Consultar() {
         const Resultado = await Respuesta.json();
         //Presentar a respuesta en el html
         //El resultado está en formato JSON, y se puede acceder a las propiedades del json, a través del .
-        $("#txtNombreCurso").val(Resultado.Nombre);
+        $("#txtNombre").val(Resultado.Nombre);
         $("#txtDescripcion").val(Resultado.Descripcion);
         $("#txtDuracion").val(Resultado.Duracion);
         $("#txtNivel").val(Resultado.Nivel);              
@@ -45,8 +45,8 @@ async function EjecutarComando(Comando) {
     //Capturar los datos de entrada
     //Definición de variables en javascript: let, var. let define variables locales para la función,
     //var define variables globales para la página
-    var Codigo = $("#txtCodigoCurso").val();
-    let Nombre = $("#txtNombreCurso").val();
+    var Codigo = $("#txtCodigo").val();
+    let Nombre = $("#txtNombre").val();
     let Descripcion = $("#txtDescripcion").val();
     let Duracion = $("#txtDuracion").val();
     let Nivel = $("#txtNivel").val();
@@ -61,12 +61,12 @@ async function EjecutarComando(Comando) {
         Nivel: Nivel        
     }
     try {
-        const Respuesta = await fetch("http://localhost:62586/api/Estudiantes",
+        const Respuesta = await fetch("http://localhost:62586/api/Cursos",
             {
                 method: Comando,
                 mode: "cors",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify(DatosEstudiante)
+                body: JSON.stringify(DatosCurso)
             });
         //Leer la respuesta del servicio
         const Resultado = await Respuesta.json();
