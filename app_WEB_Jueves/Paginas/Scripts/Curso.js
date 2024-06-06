@@ -1,6 +1,8 @@
 ﻿jQuery(function () {
     //Registrar los botones para responder al evento click
     $("#dvMenu").load("../Paginas/Menu.html")
+    //Invoca la función que llena el combo de tipos de producto
+    LlenarComboProfesor();
     $("#btnInsertar").on("click", function () {
         EjecutarComando("POST");
     });
@@ -14,6 +16,27 @@
         Consultar();
     });
 });
+
+async function LlenarComboProfesor() {
+    try {
+        const Respuesta = await fetch("http://localhost:62586/api/Profesores",
+            {
+                method: "GET",
+                mode: "cors",
+                headers: { "Content-Type": "application/json" }
+            });
+        //Leer la respuesta del servicio
+        const Resultado = await Respuesta.json();
+        for (i = 0; i < Resultado.length; i++) {
+            $("#cboDocumentoProfesor").append('<option value="' + Resultado[i].Documento + '">' + Resultado[i].Nombre + '</option>');
+        }
+    }
+    catch (_error) {
+        //Presentar a respuesta del error en el html
+        $("#dvMensaje").html(_error);
+    }
+}
+
 
 async function Consultar() {
     let Codigo = $("#txtCodigo").val();
