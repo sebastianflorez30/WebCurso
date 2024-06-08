@@ -3,6 +3,7 @@
     $("#dvMenu").load("../Paginas/Menu.html")
     //Invoca la función que llena el combo de tipos de producto
     LlenarComboSesion();
+    
     $("#btnInsertar").on("click", function () {
         EjecutarComando("POST");
     });

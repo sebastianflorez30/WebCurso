@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link href="Estilos/css/all.min.css" rel="stylesheet" />
     <link href="Estilos/adminlte.min.css" rel="stylesheet" />
+    <!--Estilos para las tablas-->
+    <link href="Estilos/dataTables.min.css" rel="stylesheet" />
+    <link href="Estilos/dataTables.bootstrap4.min.css" rel="stylesheet" />
 </head>
 <body class="hold-transition sidebar-mini">
     <section class="content">
@@ -17,7 +20,7 @@
                 <div class="col-md-12" id="dvMenu">
                 </div>
                 <div class="col-md-12">
-                    <div class="card card-primary">
+                    <div class="card card-cyan">
                         <div class="card-header">
                             <h3 class="card-title">Registro de Cursos</h3>
                         </div>
@@ -69,8 +72,22 @@
                                             </div>
                                             <div class="col-md-3">
                                                 <div class="form-group">
-                                                    <label for="txtDocumentoEstudiante">Documento Estudiante</label>
-                                                    <input type="text" class="form-control" id="txtDocumentoEstudiante" placeholder="Documento del estudiante">
+                                                    <label for="cboDocumentoEstudiante">Documento Estudiante</label>
+                                                    <select id="cboDocumentoEstudiante" class="form-control">
+                                                        <option value="0">SELECCIONAR</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="txtCodigoAsignatura">Codigo de la asignatura</label>
+                                                    <input type="text" class="form-control" id="txtCodigoAsignatura" placeholder="Codigo de la asignatura">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="txtCodigoHorario">Codigo del horario</label>
+                                                    <input type="text" class="form-control" id="txtCodigoHorario" placeholder="Codigo del horario">
                                                 </div>
                                             </div>
                                             <div class="col-md-3">
@@ -91,10 +108,10 @@
                                                     <input type="text" class="form-control" id="txtCodigoCalificacion" placeholder="Codigo de la calificacion">
                                                 </div>
                                             </div>
-                                        </div>                                        
+                                        </div>
                                     </div>
                                 </div>
-                                <div class="card card-danger">
+                                <div class="card card-cyan">
                                     <div class="card-header">
                                         <h3 class="card-title">PROCESO</h3>
                                     </div>
@@ -120,7 +137,7 @@
                                         <br />
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <table id="tblEstudiante" class="table table-bordered table-striped" style="width:100%;">
+                                                <table id="tblCursos" class="table table-bordered table-striped" style="width:100%;">
                                                     <thead>
                                                         <tr>
                                                             <th>Codigo</th>
@@ -154,6 +171,10 @@
     </section>
     <script src="../Scripts/jquery-3.4.1.min.js"></script>
     <script src="../Scripts/bootstrap.bundle.min.js"></script>
+    <!--Archivos comunes-->
+    <script src="Scripts/Comunes/Tablas.js"></script>
+    <script src="Scripts/Comunes/Combos.js"></script>
+    <!--Archivos de la página-->
     <script src="Scripts/Curso.js"></script>
 </body>
 </html>

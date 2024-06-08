@@ -14,6 +14,11 @@
     <!-- Estilos para el datatable -->
     <link href="Estilos/dataTables.min.css" rel="stylesheet" />
     <link href="Estilos/dataTables.bootstrap4.min.css" rel="stylesheet" />
+    <style>
+        .card-header {
+            margin-top: 20px
+        }
+    </style>
 </head>
 <body class="hold-transition sidebar-mini">
     <section class="content">
@@ -24,9 +29,9 @@
                 <!-- left column -->
                 <div class="col-md-12">
                     <!-- general form elements -->
-                    <div class="card card-primary">
+                    <div class="card card-cyan">
                         <div class="card-header">
-                            <h3 class="card-dark">FACTURA DE COMPRA</h3>
+                            <h3 class="card-title">Factura de Compra</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
@@ -35,9 +40,9 @@
                                 <div class="row">
                                     <div class="col-md-5">
                                         <div class="form-group">
-                                            <label for="cboEmpleado">Empleado</label>
-                                            <select id="cboEmpleado" class="form-control select2" style="width: 100%;">
-                                                <option selected="selected" value="0">Seleccione un empleado</option>
+                                            <label for="cbocurso">Curso</label>
+                                            <select id="cbocurso" class="form-control select2" style="width: 100%;">
+                                                <option selected="selected" value="0">Seleccione un Curso</option>
                                             </select>
                                         </div>
                                     </div>
@@ -63,8 +68,8 @@
                                 <div class="row">
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="txtDocumento">Documento del cliente</label>
-                                            <input type="text" class="form-control" id="txtDocumento" placeholder="Documento cliente">
+                                            <label for="txtDocumento">Documento del Estudiante</label>
+                                            <input type="text" class="form-control" id="txtDocumento" placeholder="Documento Estudiante">
                                         </div>
                                     </div>
                                     <div class="col-md-1">
@@ -74,37 +79,37 @@
                                     </div>
                                     <div class="col-md-8">
                                         <div class="form-group">
-                                            <label for="txtNombreCliente">Nombre del cliente</label>
-                                            <input type="text" class="form-control" id="txtNombreCliente" placeholder="Nombre del cliente" disabled>
+                                            <label for="txtNombreEstudiante">Nombre del Estudiante</label>
+                                            <input type="text" class="form-control" id="txtNombreEstudiante" placeholder="Nombre del Estudiante" disabled>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="cboTipoProducto">Tipo Producto</label>
+                                            <label for="cboAsignatura">Asignatura</label>
                                             <!-- Se levanta el evento onchange cuando se elige un tipo de producto -->
-                                            <select id="cboTipoProducto" class="form-control select2" style="width: 100%;" onchange="LlenarComboProducto()">
-                                                <option selected="selected" value="0">Seleccione un tipo de producto</option>
+                                            <select id="cboAsignatura" class="form-control select2" style="width: 100%;" onchange="LlenarComboProducto()">
+                                                <option selected="selected" value="0">Seleccione una Asignatura</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-md-3">
                                         <div class="form-group">
-                                            <label for="cboProducto">Producto</label>
+                                            <label for="cboHorario">Horario</label>
                                             <!--En el combo producto se levanta el evento on change, para que calcule el valor unitario del producto seleccinado-->
-                                            <select id="cboProducto" class="form-control select2" style="width: 100%;" onchange="PresentarValorUnitario()">
-                                                <option selected="selected" value="0">Seleccione el producto</option>
+                                            <select id="cboHorario" class="form-control select2" style="width: 100%;" onchange="PresentarValorUnitario()">
+                                                <option selected="selected" value="0">Seleccione el Horario</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-md-2">
                                         <div class="form-group">
                                             <label for="txtValorUnitario">Valor Unitario</label>
-                                            <input type="text" class="form-control" id="txtValorUnitarioTexto" placeholder="Valor producto" disabled>
+                                            <input type="text" class="form-control" id="txtValorUnitarioTexto" placeholder="Valor curso" disabled>
                                             <!--Se agregan textos ocultos para facilitar la captura de la información y no repetir procesos-->
-                                            <input type="text" class="form-control" id="txtValorUnitario" placeholder="Valor producto" hidden>
-                                            <input type="text" class="form-control" id="txtCodigoProducto" placeholder="Codigo producto" hidden>
+                                            <input type="text" class="form-control" id="txtValorUnitario" placeholder="Valor curso" hidden>
+                                            <input type="text" class="form-control" id="txtCodigoCurso" placeholder="Codigo curso" hidden>
                                         </div>
                                     </div>
                                     <div class="col-md-2">
@@ -123,7 +128,7 @@
                                 </div>
                                 <div class="row">
                                     <div class="col-md-6">
-                                        <button type="button" id="btnAgregar" class="btn-block btn-lg btn-primary" onclick="GrabarProducto()">GRABAR PRODUCTO</button>
+                                        <button type="button" id="btnAgregar" class="btn-block btn-lg btn-primary" onclick="GrabarProducto()">GRABAR CURSO</button>
                                     </div>
                                     <div class="col-md-6">
                                         <button type="button" id="btnGrabarFactura" class="btn-block btn-lg btn-primary" onclick="GrabarFactura()">GRABAR FACTURA</button>
@@ -134,11 +139,10 @@
                                         <table id="tblFactura" class="display" style="width:100%">
                                             <thead>
                                                 <tr>
-                                                    <th>Eliminar</th>
-                                                    <th>Codigo Tipo Producto</th>
-                                                    <th>Tipo producto</th>
-                                                    <th>Codigo producto</th>
-                                                    <th>Producto</th>
+                                                    <th>Estudiante</th>
+                                                    <th>Codigo Curso</th>
+                                                    <th>Nombre Curso</th>
+                                                    <th>Asignatura</th>
                                                     <th>Cantidad</th>
                                                     <th>Valor Unitario</th>
                                                 </tr>

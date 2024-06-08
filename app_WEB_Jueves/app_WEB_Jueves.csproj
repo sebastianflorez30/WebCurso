@@ -164,9 +164,10 @@
     <Content Include="Paginas\Estilos\webfonts\fa-regular-400.svg" />
     <Content Include="Paginas\Estilos\webfonts\fa-solid-900.svg" />
     <Content Include="Paginas\Asignatura.html" />
+    <Content Include="Paginas\Facturacion.html" />
+    <Content Include="Paginas\HomeCursos.html" />
     <Content Include="Paginas\Horario.html" />
     <Content Include="Paginas\Estudiante.html" />
-    <Content Include="Paginas\Facturacion.html" />
     <Content Include="Paginas\login.html" />
     <Content Include="Paginas\Menu.html" />
     <Content Include="Paginas\Pagina1.html" />
