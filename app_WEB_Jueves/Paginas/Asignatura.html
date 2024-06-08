@@ -8,6 +8,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
     <link href="Estilos/css/all.min.css" rel="stylesheet" />
     <link href="Estilos/adminlte.min.css" rel="stylesheet" />
+    <!--Estilos para las tablas-->
+    <link href="Estilos/dataTables.min.css" rel="stylesheet" />
+    <link href="Estilos/dataTables.bootstrap4.min.css" rel="stylesheet" />
 </head>
 <body class="hold-transition sidebar-mini">
     <section class="content">
@@ -41,7 +44,7 @@
                                                     <input type="text" class="form-control" id="txtNombre" placeholder="Nombre de la asignatura">
                                                 </div>
                                             </div>
-                                        </div>    
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="card card-danger">
@@ -70,11 +73,11 @@
                                         <br />
                                         <div class="row">
                                             <div class="col-md-12">
-                                                <table id="tblEstudiante" class="table table-bordered table-striped" style="width:100%;">
+                                                <table id="tblAsignatura" class="table table-bordered table-striped" style="width:100%;">
                                                     <thead>
                                                         <tr>
                                                             <th>Codigo</th>
-                                                            <th>NombreAsignatura</th>                                                            
+                                                            <th>NombreAsignatura</th>
                                                         </tr>
                                                     </thead>
                                                 </table>
@@ -94,6 +97,10 @@
     </section>
     <script src="../Scripts/jquery-3.4.1.min.js"></script>
     <script src="../Scripts/bootstrap.bundle.min.js"></script>
+    <!--Tables-->
+    <script src="../Scripts/jquery.dataTables.min.js"></script>
+    <script src="../Scripts/dataTables.bootstrap4.min.js"></script>
+    <!--Archivos de la página-->
     <script src="Scripts/Asignatura.js"></script>
 </body>
 </html>
