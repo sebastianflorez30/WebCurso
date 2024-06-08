@@ -1,4 +1,4 @@
-﻿//var oTabla = $("#tblCursos").DataTable();
+﻿var oTabla = $("#tblCursos").DataTable();
 jQuery(function () {
     //Registrar los botones para responder al evento click
     $("#dvMenu").load("../Paginas/Menu.html")
@@ -24,7 +24,7 @@ async function LlenarTablaCursos() {
     //Invoca el método GET, del servicio de tipos de producto
     //Solo se invoca el fetch
     try {
-        const Respuesta = await fetch("http://localhost:58511/api/Cursos",
+        const Respuesta = await fetch("http://localhost:62586/api/Cursos",
             {
                 method: "GET",
                 mode: "cors",
