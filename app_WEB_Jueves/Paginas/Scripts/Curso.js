@@ -28,7 +28,7 @@ async function LlenarComboProfesor() {
         //Leer la respuesta del servicio
         const Resultado = await Respuesta.json();
         for (i = 0; i < Resultado.length; i++) {
-            $("#cboDocumentoProfesor").append('<option value="' + Resultado[i].Documento + '">' + Resultado[i].Nombre + '</option>');
+            $("#cboDocumentoProfesor").append('<option value="' + Resultado[i].Documento + '">' + Resultado[i].Nombre + Resultado[i].PrimerApellido + '</option>');
         }
     }
     catch (_error) {
@@ -52,12 +52,33 @@ async function Consultar() {
             });
         //Leer la respuesta del servicio
         const Resultado = await Respuesta.json();
-        //Presentar a respuesta en el html
-        //El resultado está en formato JSON, y se puede acceder a las propiedades del json, a través del .
-        $("#txtNombre").val(Resultado.Nombre);
-        $("#txtDescripcion").val(Resultado.Descripcion);
-        $("#txtDuracion").val(Resultado.Duracion);
-        $("#txtNivel").val(Resultado.Nivel);              
+        if (Resultado != null) {
+            //Presentar a respuesta en el html
+            //El resultado está en formato JSON, y se puede acceder a las propiedades del json, a través del .
+            $("#txtNombre").val(Resultado.Nombre);
+            $("#txtDescripcion").val(Resultado.Descripcion);
+            $("#txtDuracion").val(Resultado.Duracion);
+            $("#txtNivel").val(Resultado.Nivel);
+            $("#cboDocumentoProfesor").val(Resultado.DocumentoProfesor);
+            $("#txtDocumentoEstudiante").val(Resultado.DocumentoEstudiante);
+            $("#txtCodigoAsistencia").val(Resultado.CodigoAsistencia);
+            $("#txtCodigoEvaluacion").val(Resultado.CodigoEvaluacion);
+            $("#txtCodigoCalificacion").val(Resultado.CodigoCalificacion);
+            $("#dvMensaje").html("")
+        }
+        else {
+            $("#txtNombre").val("");
+            $("#txtDescripcion").val("");
+            $("#txtDuracion").val("");
+            $("#txtNivel").val("");
+            $("#cboDocumentoProfesor").val(1);
+            $("#txtDocumentoEstudiante").val("");
+            $("#txtCodigoAsistencia").val("");
+            $("#txtCodigoEvaluacion").val("");
+            $("#txtCodigoCalificacion").val("");
+            $("#dvMensaje").html("No hay datos para el curso consultado")
+        }
+                     
     }
     catch (_error) {
         //Presentar a respuesta del error en el html
