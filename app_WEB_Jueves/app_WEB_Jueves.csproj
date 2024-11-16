@@ -169,7 +169,7 @@
     <Content Include="Paginas\Facturacion.html" />
     <Content Include="Paginas\login.html" />
     <Content Include="Paginas\Menu.html" />
-    <Content Include="Paginas\Pagina1 - Copy.html" />
+    <Content Include="Paginas\HomeCursos.html" />
     <Content Include="Paginas\Pagina1.html" />
     <Content Include="Paginas\Pagina2.html" />
     <Content Include="Paginas\PaginaBase.html" />
