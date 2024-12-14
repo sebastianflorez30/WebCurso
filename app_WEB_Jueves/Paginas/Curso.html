@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Cursos de Sistemas ITM</title>
+    <!-- Google Font: Source Sans Pro -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+    <link href="Estilos/css/all.min.css" rel="stylesheet" />
+    <link href="Estilos/adminlte.min.css" rel="stylesheet" />
+    <!--Estilos para las tablas-->
+    <link href="Estilos/dataTables.min.css" rel="stylesheet" />
+    <link href="Estilos/dataTables.bootstrap4.min.css" rel="stylesheet" />
+</head>
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <!-- left column -->
+                <div class="col-md-12" id="dvMenu">
+                </div>
+                <div class="col-md-12">
+                    <div class="card card-cyan">
+                        <div class="card-header">
+                            <h3 class="card-title">Registro de Cursos</h3>
+                        </div>
+                        <form id="frmIncapacidades">
+                            <div class="card-body">
+                                <div class="card card-gray-dark">
+                                    <div class="card-header">
+                                        <h3 class="card-title">DATOS ENTRADA</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="txtCodigo">Codigo Curso</label>
+                                                    <input type="text" class="form-control" id="txtCodigo" placeholder="Codigo del curso">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="txtNombre">Nombre Curso</label>
+                                                    <input type="text" class="form-control" id="txtNombre" placeholder="Nombre del curso">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="txtDescripcion">Descripcion</label>
+                                                    <input type="text" class="form-control" id="txtDescripcion" placeholder="Descripcion del curso">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="txtDuracion">Duracion</label>
+                                                    <input type="text" class="form-control" id="txtDuracion" placeholder="Duracion del curso">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="txtNivel">Nivel</label>
+                                                    <input type="text" class="form-control" id="txtNivel" placeholder="Nivel del curso">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="cboDocumentoProfesor">Documento Profesor</label>
+                                                    <select id="cboDocumentoProfesor" class="form-control">
+                                                        <option value="0">SELECCIONAR</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="cboDocumentoEstudiante">Documento Estudiante</label>
+                                                    <select id="cboDocumentoEstudiante" class="form-control">
+                                                        <option value="0">SELECCIONAR</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="txtCodigoAsignatura">Codigo de la asignatura</label>
+                                                    <input type="text" class="form-control" id="txtCodigoAsignatura" placeholder="Codigo de la asignatura">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="txtCodigoHorario">Codigo del horario</label>
+                                                    <input type="text" class="form-control" id="txtCodigoHorario" placeholder="Codigo del horario">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="txtCodigoAsistencia">Codigo de la asistencia</label>
+                                                    <input type="text" class="form-control" id="txtCodigoAsistencia" placeholder="Codigo de la asistencia">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="txtCodigoEvaluacion">Codigo de la evaluacion</label>
+                                                    <input type="text" class="form-control" id="txtCodigoEvaluacion" placeholder="Codigo de la evaluacion">
+                                                </div>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <div class="form-group">
+                                                    <label for="txtCodigoCalificacion">Codigo de la calificacion</label>
+                                                    <input type="text" class="form-control" id="txtCodigoCalificacion" placeholder="Codigo de la calificacion">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card card-cyan">
+                                    <div class="card-header">
+                                        <h3 class="card-title">PROCESO</h3>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="row">
+                                            <div class="col-md-3">
+                                                <br />
+                                                <button type="button" id="btnInsertar" class="btn-block btn-lg btn-primary">INSERTAR</button>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <br />
+                                                <button type="button" id="btnActualizar" class="btn-block btn-lg btn-primary">ACTUALIZAR</button>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <br />
+                                                <button type="button" id="btnEliminar" class="btn-block btn-lg btn-primary">ELIMINAR</button>
+                                            </div>
+                                            <div class="col-md-3">
+                                                <br />
+                                                <button type="button" id="btnConsultar" class="btn-block btn-lg btn-primary">CONSULTAR</button>
+                                            </div>
+                                        </div>
+                                        <br />
+                                        <div class="row">
+                                            <div class="col-md-12">
+                                                <table id="tblCursos" class="table table-bordered table-striped" style="width:100%;">
+                                                    <thead>
+                                                        <tr>
+                                                            <th>Codigo</th>
+                                                            <th>Nombre</th>
+                                                            <th>Descipcion</th>
+                                                            <th>Duracion</th>
+                                                            <th>Nivel</th>
+                                                            <th>CodigoAsignatura</th>
+                                                            <th>CodigoHorario</th>
+                                                            <th>DocumentoProfesor</th>
+                                                            <th>DocumentoEstudiante</th>
+                                                            <th>CodigoAsistencia</th>
+                                                            <th>CodigoEvaluacion</th>
+                                                            <th>CodigoCalificacion</th>
+                                                        </tr>
+                                                    </thead>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-footer">
+                                    <div id="dvMensaje" class=""></div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="../Scripts/jquery-3.4.1.min.js"></script>
+    <script src="../Scripts/bootstrap.bundle.min.js"></script>
+    <!--Tables-->
+    <script src="../Scripts/jquery.dataTables.min.js"></script>
+    <script src="../Scripts/dataTables.bootstrap4.min.js"></script>
+    <!--Archivos comunes-->
+    <script src="Scripts/Comunes/Tablas.js"></script>
+    <script src="Scripts/Comunes/Combos.js"></script>
+    <!--Archivos de la página-->
+    <script src="Scripts/Curso.js"></script>
+</body>
+</html>
